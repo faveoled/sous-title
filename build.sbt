@@ -1,17 +1,17 @@
 ThisBuild / scalaVersion := "3.3.1"
 
 import xerial.sbt.Sonatype._
-sonatypeProjectHosting := Some(GitHubHosting("faveoled", "sous-title", "faveoled@yandex.com"))
+ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("faveoled", "sous-title", "faveoled@yandex.com"))
 
 // used as `artifactId`
-name := "sous-title"
+ThisBuild / name := "sous-title"
 // used as `groupId`
-organization := "io.github.faveoled"
+ThisBuild / organization := "io.github.faveoled"
 
 
-licenses := Seq("APL2" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt"))
+ThisBuild / licenses := Seq("APL2" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
-description := "A scala library for parsing .srt files and strings format"
+ThisBuild / description := "A scala library for parsing .srt files and strings format"
 
 
 ThisBuild / publishMavenStyle := true
@@ -21,12 +21,12 @@ ThisBuild / publishTo := {
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
-dynverSonatypeSnapshots in ThisBuild := true
+ThisBuild / dynverSonatypeSnapshots in ThisBuild := true
 // publishTo := sonatypePublishToBundle.value
-sonatypeCredentialHost := "s01.oss.sonatype.org"
+ThisBuild / sonatypeCredentialHost := "s01.oss.sonatype.org"
 
 lazy val root = project.in(file(".")).
-  aggregate(foo.js, foo.jvm).
+  aggregate(foo.js, foo.jvm, foo.native).
   settings(
     publish := {},
     publishLocal := {},
