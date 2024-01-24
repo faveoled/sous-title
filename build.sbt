@@ -13,8 +13,8 @@ licenses := Seq("APL2" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt")
 
 description := "A scala library for parsing .srt files and strings format"
 
-
-publishTo := {
+ThisBuild / versionScheme := Some("early-semver")
+ThisBuild / publishTo := {
   val nexus = "https://s01.oss.sonatype.org/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
