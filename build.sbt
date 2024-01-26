@@ -8,6 +8,20 @@ ThisBuild / name := "sous-title"
 // used as `groupId`
 ThisBuild / organization := "io.github.faveoled"
 
+ThisBuild / scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/faveoled/sous-title"),
+    "scm:git@github.com:faveoled/sous-title.git"
+  )
+)
+ThisBuild / developers := List(
+  Developer(
+    id = "faveoled",
+    name = "Fave Oled",
+    email = "faveoled@yandex.com",
+    url = url("https://github.com/faveoled")
+  )
+)
 
 ThisBuild / licenses := Seq("APL2" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
