@@ -22,6 +22,7 @@ ThisBuild / developers := List(
     url = url("https://github.com/faveoled")
   )
 )
+ThisBuild / homepage := Some(url("https://github.com/faveoled/sous-title"))
 
 ThisBuild / licenses := Seq("APL2" -> url("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 
